@@ -1,0 +1,227 @@
+# WG4用語集
+# https://docs.google.com/spreadsheets/d/1V8wX-pxAO-zuYwTSvTSuZ_FtnV47su6Tyy2vM5GEOLw/edit?gid=0#gid=0
+
+version: 1
+rules:
+  - expected: コンテンツ制作者
+    patterns:
+      - /(?<!コンテンツ)制作者/ # 「コンテンツコンテンツ制作者」になるので
+      - 著者
+    specs:
+      - from: 制作者
+        to: コンテンツ制作者
+      - from: 著者
+        to: コンテンツ制作者
+      - from: コンテンツ制作者
+        to: コンテンツ制作者
+  - expected: 利用者
+    patterns:
+      - /ユーザー(?!(エージェント|インター?フェース))/ # 「利用者エージェント」になるので
+      - /ユーザ(?!ー)(?!(エージェント|インター?フェース))/ # 「利用者エージェント」になるので
+    specs:
+      - from: 利用者
+        to: 利用者
+      - from: ユーザ
+        to: 利用者
+      - from: ユーザー
+        to: 利用者
+      - from: ユーザーエージェント
+        to: ユーザーエージェント
+      - from: ユーザエージェント
+        to: ユーザエージェント
+  - expected: ユーザエージェント
+    patterns:
+      - ユーザーエージェント
+    specs:
+      - from: ユーザエージェント
+        to: ユーザエージェント
+      - from: ユーザーエージェント
+        to: ユーザエージェント
+  - expected: ユーザインタフェース
+    patterns:
+      - ユーザーインターフェース
+      - ユーザーインターフェイス
+      - ユーザーインタフェース
+      - ユーザーインタフェイス
+      - ユーザインターフェイス
+    specs:
+      - from: ユーザインタフェース
+        to: ユーザインタフェース
+      - from: ユーザーインターフェース
+        to: ユーザインタフェース
+      - from: ユーザーインターフェイス
+        to: ユーザインタフェース
+      - from: ユーザーインタフェース
+        to: ユーザインタフェース
+      - from: ユーザーインタフェイス
+        to: ユーザインタフェース
+      - from: ユーザインターフェイス
+        to: ユーザインタフェース
+  - expected: ジェスチャ
+    patterns:
+      - ジェスチャー
+    specs:
+      - from: ジェスチャ
+        to: ジェスチャ
+      - from: ジェスチャー
+        to: ジェスチャ
+  - expected: 版
+    patterns:
+      - バージョン
+    specs:
+      - from: バージョン
+        to: 版
+  - expected: ウェブ
+    patterns:
+      - web
+      - Web
+      - WEB
+      - ウェッブ
+    specs:
+      - from: web
+        to: ウェブ
+      - from: Web
+        to: ウェブ
+      - from: WEB
+        to: ウェブ
+      - from: ウェッブ
+        to: ウェブ
+  - expected: 特定する
+    patterns:
+      - 識別する
+    specs:
+      - from: 識別する
+        to: 特定する
+  - expected: スペースキー
+    patterns:
+      - スペースバー
+    specs:
+      - from: スペースバー
+        to: スペースキー
+  - expected: サーバ
+    patterns:
+      - サーバー
+    specs:
+      - from: サーバー
+        to: サーバ
+  - expected: ドラッグ＆ドロップ
+    patterns:
+      - ドラッグアンドドロップ
+    specs:
+      - from: ドラッグアンドドロップ
+        to: ドラッグ＆ドロップ
+  - expected: 置き換える
+    patterns:
+      - とって代わる
+    specs:
+      - from: とって代わる
+        to: 置き換える
+  - expected: 受け入れ基準
+    patterns:
+      - 合否基準
+      - 適合基準
+    specs:
+      - from: 合否基準
+        to: 受け入れ基準
+      - from: 適合基準
+        to: 受け入れ基準
+  - expected: ドットリリース
+    patterns:
+      - マイナーリリース
+      - マイナーアップデート
+      - ポイントリリース
+    specs:
+      - from: マイナーリリース
+        to: ドットリリース
+      - from: マイナーアップデート
+        to: ドットリリース
+      - from: ポイントリリース
+        to: ドットリリース
+  - expected: トリガ
+    patterns:
+      - トリガー刺激
+      - トリガー
+    specs:
+      - from: トリガー
+        to: トリガ
+      - from: トリガー刺激
+        to: トリガ
+  - expected: 十分な達成方法
+    patterns:
+      - 達成基準を満たすことのできる実装方法
+    specs:
+      - from: 達成基準を満たすことのできる実装方法
+        to: 十分な達成方法
+  - expected: 参考達成方法
+    patterns:
+      - 参考にすべき実装方法
+    specs:
+      - from: 参考にすべき実装方法
+        to: 参考達成方法
+  - expected: 失敗例
+    patterns:
+      - 不適合事例
+    specs:
+      - from: 不適合事例
+        to: 失敗例
+  - expected: テキストによる代替
+    patterns:
+      - 代替テキスト
+    specs:
+      - from: 代替テキスト
+        to: テキストによる代替
+  - expected: 定義実体
+    patterns:
+      - 定義インスタンス
+    specs:
+      - from: 定義インスタンス
+        to: 定義実体
+  - expected: 文字色
+    patterns:
+      - テキストの色
+    specs:
+      - from: テキストの色
+        to: 文字色
+  - expected: 色覚異常
+    patterns:
+      - 色弱
+    specs:
+      - from: 色弱
+        to: 色覚異常
+  # - expected: ろう
+  #   patterns:
+  #     - デフ
+  #   specs:
+  #     - from: デフ
+  #       to: ろう
+  - expected: ロービジョン
+    patterns:
+      - 弱視
+    specs:
+      - from: 弱視
+        to: ロービジョン
+  # - expected: 支援技術
+  #   patterns:
+  #     - AT
+  #   specs:
+  #     - from: AT
+  #       to: 支援技術
+  - expected: 軌跡ベースの
+    patterns:
+      - パスベースの
+    specs:
+      - from: パスベースの
+        to: 軌跡ベースの
+  - expected: セクション
+    patterns:
+      - 区分
+    specs:
+      - from: 区分
+        to: セクション
+  - expected: サブセクション
+    patterns:
+      - 小区分
+    specs:
+      - from: 小区分
+        to: サブセクション
+  

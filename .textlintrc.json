@@ -1,0 +1,14 @@
+{
+  "plugins": ["html"],
+  "rules": {
+    "no-mix-dearu-desumasu": true,
+    "@textlint-ja/morpheme-match": {
+      "dictionaryPathList": ["./dictionary/index.cjs"]
+    },
+    "@textlint-ja/no-synonyms": true,
+    "prh": {
+      "rulePaths": ["./prh/yougo.yml"]
+    },
+    "ja-hiragana-hojodoushi": true
+  }
+}
