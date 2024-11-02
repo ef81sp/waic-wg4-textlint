@@ -5,7 +5,7 @@ import path from "path"
 import { createLinter, loadTextlintrc, loadLinterFormatter } from "textlint"
 
 const args = process.argv.slice(2)
-const directory = args[1]
+const directory = args[0]
 if (!directory) {
   console.error("Error: No directory specified.")
   process.exit(1)
