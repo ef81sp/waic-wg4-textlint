@@ -24,6 +24,9 @@ const descriptor = await loadTextlintrc()
 const linter = createLinter({
   descriptor,
 })
+
+console.log(`${absolutePath}/**/*.md`)
+
 const results = await linter.lintFiles([`${absolutePath}/**/*.md`])
 // textlint has two types formatter sets for linter and fixer
 const formatter = await loadLinterFormatter({ formatterName: "stylish" })
