@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const args = process.argv.slice(2);
-const directory = args[0];
+const directory = args[1];
 if (!directory) {
   console.error('Error: No directory specified.');
   process.exit(1);
