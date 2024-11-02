@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "lint": "./cli.js"
+    "lint": "./cli.mjs"
   },
   "scripts": {
     "lint": "textlint \"./docs/**/*.html\"",
