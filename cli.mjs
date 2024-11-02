@@ -22,7 +22,7 @@ if (!fs.existsSync(absolutePath)) {
 // It includes rules, plugins, and options
 console.log(new URL(".textlintrc.json", import.meta.url).pathname)
 const descriptor = await loadTextlintrc({
-  configFile: new URL(".textlintrc.json", import.meta.url).pathname,
+  configFilePath: new URL(".textlintrc.json", import.meta.url).pathname,
 })
 console.dir({ descriptor }, { depth: null })
 
