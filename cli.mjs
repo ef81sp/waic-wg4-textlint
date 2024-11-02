@@ -5,6 +5,8 @@ import path from "path"
 import { createLinter, loadTextlintrc, loadLinterFormatter } from "textlint"
 
 const args = process.argv.slice(2)
+
+console.log(args)
 const directory = args[0]
 if (!directory) {
   console.error("Error: No directory specified.")
@@ -23,7 +25,6 @@ if (!fs.existsSync(absolutePath)) {
 const descriptor = await loadTextlintrc({
   configFilePath: new URL(".textlintrc.json", import.meta.url).pathname,
 })
-console.dir({ descriptor }, { depth: null })
 
 const linter = createLinter({
   descriptor,
