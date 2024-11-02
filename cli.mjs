@@ -36,7 +36,7 @@ const linter = createLinter({
 })
 
 const isFix = args[1] === "--fix"
-const files = [`${absolutePath}/**/*.html`]
+const files = [path.join(absolutePath, '**/*.html')]
 const results = isFix
   ? await linter.fixFiles(files)
   : await linter.lintFiles(files)
