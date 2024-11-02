@@ -4,9 +4,13 @@ WAIC (ウェブアクセシビリティ基盤委員会) の翻訳ワーキング
 
 ## 使い方
 
-1. `docs` 配下に lint したいドキュメント(ディレクトリでも可)を配置します。
-2. `npm run lint`
-   1. 修正を反映したい場合は `npm run -- --fix` とします
+```sh
+# lint only
+npx github:ef81sp/waic-wg4-textlint <dir>
+
+# fix
+npx npx github:ef81sp/waic-wg4-textlint <dir> --fix
+```
 
 ## 免責
 

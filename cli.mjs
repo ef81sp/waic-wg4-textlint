@@ -20,7 +20,6 @@ if (!fs.existsSync(absolutePath)) {
 
 // descriptor is a structure object for linter
 // It includes rules, plugins, and options
-console.log(new URL(".textlintrc.json", import.meta.url).pathname)
 const descriptor = await loadTextlintrc({
   configFilePath: new URL(".textlintrc.json", import.meta.url).pathname,
 })
@@ -30,7 +29,11 @@ const linter = createLinter({
   descriptor,
 })
 
-const results = await linter.lintFiles([`${absolutePath}/**/*.html`])
+const isFix = args[1] === "--fix"
+const files = [`${absolutePath}/**/*.html`]
+const results = isFix
+  ? await linter.fixFiles(files)
+  : await linter.lintFiles(files)
 // textlint has two types formatter sets for linter and fixer
 const formatter = await loadLinterFormatter({ formatterName: "stylish" })
 const output = formatter.format(results)
