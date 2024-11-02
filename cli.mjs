@@ -49,7 +49,6 @@ if (isFix) {
   }
 }
 
-console.dir(results, { depth: null })
 // textlint has two types formatter sets for linter and fixer
 const formatter = isFix
   ? await loadFixerFormatter({ formatterName: "stylish" })
