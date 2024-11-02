@@ -21,6 +21,8 @@ if (!fs.existsSync(absolutePath)) {
 // descriptor is a structure object for linter
 // It includes rules, plugins, and options
 const descriptor = await loadTextlintrc()
+console.dir({ descriptor }, { depth: null })
+
 const linter = createLinter({
   descriptor,
 })
