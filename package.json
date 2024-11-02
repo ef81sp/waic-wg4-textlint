@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "lint": "textlint"
+  },
   "scripts": {
     "lint": "textlint \"./docs/**/*.html\"",
     "test": "textlint \"./test/**/*.html\""
