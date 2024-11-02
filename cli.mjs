@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 
@@ -16,6 +17,8 @@ if (!fs.existsSync(absolutePath)) {
   console.error('Error: Directory does not exist.');
   process.exit(1);
 }
+
+execSync("npm install");
 
 import { createLinter, loadTextlintrc, loadLinterFormatter } from "textlint";
 // descriptor is a structure object for linter
