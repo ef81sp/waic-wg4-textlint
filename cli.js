@@ -13,8 +13,9 @@ if (!directory) {
 
 const absolutePath = path.resolve(process.cwd(), directory);
 if (!fs.existsSync(absolutePath)) {
+  console.log(absolutePath);
   console.error('Error: Directory does not exist.');
   process.exit(1);
 }
 
-execSync(`npx textlint "${absolutePath}"`, { stdio: 'inherit' });
+execSync(`textlint "${absolutePath}"`, { stdio: 'inherit' });
