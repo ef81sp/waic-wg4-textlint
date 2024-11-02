@@ -41,6 +41,14 @@ const results = isFix
   ? await linter.fixFiles(files)
   : await linter.lintFiles(files)
 
+if (isFix) {
+  for (const result of results) {
+    if (result.filePath) {
+      fs.promises.writeFile(result.filePath, result.output)
+    }
+  }
+}
+
 console.dir(results, { depth: null })
 // textlint has two types formatter sets for linter and fixer
 const formatter = isFix
