@@ -40,6 +40,8 @@ const files = [`${absolutePath}/**/*.html`]
 const results = isFix
   ? await linter.fixFiles(files)
   : await linter.lintFiles(files)
+
+console.dir(results, { depth: null })
 // textlint has two types formatter sets for linter and fixer
 const formatter = isFix
   ? await loadFixerFormatter({ formatterName: "stylish" })
