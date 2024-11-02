@@ -9,7 +9,7 @@ WAIC (ウェブアクセシビリティ基盤委員会) の翻訳ワーキング
 npx github:ef81sp/waic-wg4-textlint <dir>
 
 # fix
-npx npx github:ef81sp/waic-wg4-textlint <dir> --fix
+npx github:ef81sp/waic-wg4-textlint <dir> --fix
 ```
 
 ## 免責
