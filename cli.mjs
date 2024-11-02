@@ -2,7 +2,12 @@
 
 import fs from "fs"
 import path from "path"
-import { createLinter, loadTextlintrc, loadLinterFormatter, loadFixerFormatter } from "textlint"
+import {
+  createLinter,
+  loadTextlintrc,
+  loadLinterFormatter,
+  loadFixerFormatter,
+} from "textlint"
 
 const args = process.argv.slice(2)
 
@@ -36,6 +41,8 @@ const results = isFix
   ? await linter.fixFiles(files)
   : await linter.lintFiles(files)
 // textlint has two types formatter sets for linter and fixer
-const formatter = isFix ? await loadFixerFormatter({formatterName: "stylish"}):  await loadLinterFormatter({ formatterName: "stylish" })
+const formatter = isFix
+  ? await loadFixerFormatter({ formatterName: "stylish" })
+  : await loadLinterFormatter({ formatterName: "stylish" })
 const output = formatter.format(results)
 console.log(output)
