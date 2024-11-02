@@ -18,4 +18,4 @@ if (!fs.existsSync(absolutePath)) {
   process.exit(1);
 }
 
-execSync(`npm run lint -c ./.textlintrc.json "${absolutePath}"`, { stdio: 'inherit' });
+execSync(`npx textlint -c ./.textlintrc.json "${absolutePath}"`, { stdio: 'inherit' });
