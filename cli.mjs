@@ -20,9 +20,9 @@ if (!fs.existsSync(absolutePath)) {
 
 // descriptor is a structure object for linter
 // It includes rules, plugins, and options
-console.log(path.resolve(__dirname, ".textlintrc.json"))
+console.log(new URL(".textlintrc.json", import.meta.url).pathname)
 const descriptor = await loadTextlintrc({
-  configFile: path.resolve(__dirname, ".textlintrc.json"),
+  configFile: new URL(".textlintrc.json", import.meta.url).pathname,
 })
 console.dir({ descriptor }, { depth: null })
 
