@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 const args = process.argv.slice(2);
 const directory = args[1];
@@ -18,4 +17,15 @@ if (!fs.existsSync(absolutePath)) {
   process.exit(1);
 }
 
-execSync(`npx textlint -c ./.textlintrc.json "${absolutePath}"`, { stdio: 'inherit' });
+import { createLinter, loadTextlintrc, loadLinterFormatter } from "textlint";
+// descriptor is a structure object for linter
+// It includes rules, plugins, and options
+const descriptor = await loadTextlintrc();
+const linter = createLinter({
+    descriptor
+});
+const results = await linter.lintFiles([`${absolutePath}/**/*.md`]);
+// textlint has two types formatter sets for linter and fixer
+const formatter = await loadLinterFormatter({ formatterName: "stylish" });
+const output = formatter.format(results);
+console.log(output);
