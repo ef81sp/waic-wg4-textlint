@@ -18,4 +18,4 @@ if (!fs.existsSync(absolutePath)) {
   process.exit(1);
 }
 
-execSync(`textlint "${absolutePath}"`, { stdio: 'inherit' });
+execSync(`npx textlint "${absolutePath}"`, { stdio: 'inherit' });
