@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "p_craft",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@textlint-ja/textlint-rule-morpheme-match": "^2.0.0",
     "@textlint-ja/textlint-rule-no-synonyms": "^1.3.0",
     "sudachi-synonyms-dictionary": "^14.0.0",
